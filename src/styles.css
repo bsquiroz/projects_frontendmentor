@@ -1,0 +1,106 @@
+:root {
+	--primary-100: #892cdc;
+	--primary-100--bg: #892cdc80;
+	--primary-200: #bc6ff1;
+	--primary-300: #fdf6fd;
+	--accent-100: #d9acf5;
+	--accent-200: #fff4ff;
+	--text-100: #eeeeee;
+	--text-200: #fdebed;
+	--bg-100: #222831;
+	--bg-200: #393e46;
+	--bg-300: #454e59;
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+img {
+	width: 100%;
+	display: block;
+}
+
+body {
+	padding: 1rem;
+	background-color: var(--bg-100);
+}
+
+ul {
+	list-style: none;
+}
+
+.bx {
+	font-size: 2rem;
+}
+
+.projects {
+	max-width: 1024px;
+	margin: 0 auto;
+
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+	gap: 1rem;
+}
+
+.project {
+	background-color: var(--bg-300);
+	padding: 1rem;
+	border-radius: 1rem;
+	display: grid;
+	gap: 1rem;
+	color: var(--text-200);
+}
+
+.project__img {
+	overflow: hidden;
+	border-radius: 1rem;
+	cursor: pointer;
+	position: relative;
+}
+
+.project__img__banner {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	background-color: var(--primary-100--bg);
+	opacity: 0;
+	z-index: 100;
+	transition: opacity 0.5s;
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 1rem;
+}
+
+.project__img:hover .project__img__banner {
+	opacity: 1;
+}
+
+.project__img__banner .bx {
+	color: var(--accent-200);
+}
+
+.project__img img {
+	aspect-ratio: 16 / 9;
+	object-fit: cover;
+	transition: transform 0.5s;
+}
+
+.project__img:hover img {
+	transform: scale(1.1);
+}
+
+.project__info {
+	display: grid;
+	gap: 0.5rem;
+}
+
+.stack {
+	display: flex;
+	gap: 0.5rem;
+}

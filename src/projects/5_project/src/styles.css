@@ -1,0 +1,114 @@
+@import url("https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@500;700;900&display=swap");
+
+:root {
+	--Paleblue: hsl(225, 100%, 94%);
+	--Brightblue: hsl(245, 75%, 52%);
+	--Verypaleblue: hsl(225, 100%, 98%);
+	--Desaturatedblue: hsl(224, 23%, 55%);
+	--Darkblue: hsl(223, 47%, 23%);
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: "Red Hat Display", sans-serif;
+}
+
+.container {
+	background-color: var(--Paleblue);
+	min-height: 100vh;
+	display: grid;
+	place-items: center;
+	padding: 1rem;
+	position: relative;
+}
+
+.wave {
+	position: absolute;
+	top: 0;
+	width: 100%;
+}
+
+.card {
+	position: relative;
+	border-radius: 1rem;
+	overflow: hidden;
+	max-width: 400px;
+	user-select: none;
+}
+
+.card__img img {
+	width: 100%;
+}
+
+.card__summary {
+	text-align: center;
+	padding: 2rem;
+	background-color: var(--Verypaleblue);
+	color: var(--Desaturatedblue);
+
+	display: flex;
+	flex-direction: column;
+	gap: 1.5rem;
+}
+
+.card__summary h2 {
+	color: var(--Darkblue);
+	font-weight: 900;
+	font-size: 2rem;
+}
+
+.summary__plan {
+	display: grid;
+	grid-template-columns: 1fr 1fr 2fr;
+	place-items: center;
+	gap: 1rem;
+}
+
+.summary__plan div p:nth-child(1) {
+	color: var(--Darkblue);
+}
+
+.summary__plan a {
+	text-decoration: none;
+	color: var(--Brightblue);
+	font-weight: bold;
+	transition: opacity 0.5s;
+}
+
+.summary__plan a:hover {
+	opacity: 0.8;
+}
+
+.btn {
+	cursor: pointer;
+	padding: 1rem;
+	border-radius: 0.5rem;
+	border: 2px solid transparent;
+	font-weight: 900;
+	font-size: 1rem;
+	background-color: var(--Brightblue);
+	color: var(--Paleblue);
+
+	transition: background-color 0.5s, border 0.5s, color 0.5s,
+		letter-spacing 0.5s, transform 0.5s;
+}
+
+.btn:hover {
+	background-color: transparent;
+	border: 2px solid var(--Brightblue);
+	color: var(--Brightblue);
+	letter-spacing: 1px;
+}
+
+.btn:active {
+	transform: scale(0.9);
+}
+
+.btn__cancel {
+	background-color: transparent;
+	color: var(--Desaturatedblue);
+	width: 50%;
+	align-self: center;
+}

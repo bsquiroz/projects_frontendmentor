@@ -1,0 +1,113 @@
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap");
+
+:root {
+	--Softblue: hsl(215, 51%, 70%);
+	--Cyan: hsl(178, 100%, 50%);
+	--Cyanbanner: hsla(178, 100%, 50%, 0.5);
+	--Verydarkbluemain: hsl(217, 54%, 11%);
+	--Verydarkbluecard: hsl(216, 50%, 16%);
+	--Verydarkblueline: hsl(215, 32%, 27%);
+	--White: hsl(0, 0%, 100%);
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: "Outfit", sans-serif;
+}
+
+img {
+	width: 100%;
+	display: block;
+}
+
+.container {
+	background-color: var(--Verydarkbluemain);
+	padding: 1rem;
+	min-height: 100vh;
+	display: grid;
+	place-items: center;
+}
+
+.nft {
+	padding: 1.5rem;
+	background-color: var(--Verydarkbluecard);
+	border-radius: 1rem;
+	max-width: 350px;
+	color: var(--Softblue);
+	user-select: none;
+}
+
+.nft__img {
+	overflow: hidden;
+	border-radius: 1rem;
+	margin-bottom: 1rem;
+	position: relative;
+}
+
+.nft__banner {
+	border-radius: 1rem;
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	background-color: var(--Cyanbanner);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	cursor: pointer;
+	opacity: 0;
+	/* transform: translateY(100%); */
+	/* transform: scale(0); */
+	/* transition: transform 0.5s; */
+	transition: opacity 0.5s;
+}
+
+.nft__img:hover .nft__banner {
+	/* transform: scale(1); */
+	/* transform: translateY(0%); */
+	opacity: 1;
+}
+
+.nft_info {
+	display: flex;
+	flex-direction: column;
+	gap: 1rem;
+}
+
+.nft_info h2 {
+	color: var(--White);
+}
+
+.nft__info__value {
+	display: flex;
+	justify-content: space-between;
+	border-bottom: 1px solid var(--Verydarkblueline);
+	padding-bottom: 1rem;
+}
+
+.nft__info__value .item {
+	display: flex;
+	align-items: center;
+	gap: 0.5rem;
+}
+
+.nft__info__value .item:nth-child(1) {
+	color: var(--Cyan);
+}
+
+.creator {
+	display: flex;
+	align-items: center;
+	gap: 1rem;
+}
+
+.creator__img {
+	width: 40px;
+	border: 1px solid var(--White);
+	border-radius: 50%;
+}
+
+.creator span {
+	color: var(--White);
+}
