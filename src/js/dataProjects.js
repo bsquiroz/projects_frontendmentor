@@ -89,4 +89,22 @@ export const dataProjects = [
 		img: "./src/images/img10.png",
 		video: "https://youtu.be/y4eiouLU984",
 	},
+	{
+		id: 11,
+		name: "single-price-grid-component-master",
+		link: "./src/projects/11_project",
+		tags: ["css", "html"],
+		nivel: "Newbie",
+		img: "./src/images/img11.png",
+		video: "https://youtu.be/eMjMWxg0FDw",
+	},
+	{
+		id: 12,
+		name: "huddle landing page and section-master",
+		link: "./src/projects/12_project",
+		tags: ["css", "html"],
+		nivel: "Newbie",
+		img: "./src/images/img12.png",
+		video: "https://youtu.be/JDSGwUoWxHA",
+	},
 ];

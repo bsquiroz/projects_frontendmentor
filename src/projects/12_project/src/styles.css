@@ -1,0 +1,151 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans&family=Poppins:wght@400;600&display=swap");
+
+:root {
+	--Violet: hsl(257, 40%, 49%);
+	--SoftMagenta: hsl(300, 69%, 71%);
+	--White: hsl(0, 0%, 100%);
+	--White-text: hsl(0, 0%, 80%);
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	line-height: 1.5rem;
+}
+
+img {
+	width: 100%;
+}
+
+li {
+	list-style: none;
+}
+
+a {
+	color: inherit;
+	text-decoration: none;
+}
+
+body {
+	background-color: var(--Violet);
+}
+
+.ff--open {
+	font-family: "Open Sans", sans-serif;
+}
+
+.ff--poppins {
+	font-family: "Poppins", sans-serif;
+}
+
+.container {
+	background-image: url(./images/bg-mobile.svg);
+	background-repeat: no-repeat;
+	background-size: contain;
+	max-width: 1200px;
+	margin: 0 auto;
+	padding: 2rem;
+	min-height: 100vh;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	gap: 1rem;
+}
+
+.logo {
+	width: 150px;
+	display: inline-block;
+}
+
+.main {
+	display: grid;
+	gap: 3rem;
+}
+
+.main__text {
+	display: flex;
+	flex-direction: column;
+	gap: 1.5rem;
+	text-align: center;
+}
+
+.main__text h2 {
+	color: var(--White);
+	font-family: "Poppins", sans-serif;
+}
+
+.main__text p {
+	color: var(--White-text);
+	font-family: "Open Sans", sans-serif;
+}
+
+.main__btn {
+	font-family: "Poppins", sans-serif;
+	color: var(--Violet);
+	padding: 0.7rem;
+	width: 50%;
+	border-radius: 2rem;
+	border: 2px solid transparent;
+	outline: none;
+	cursor: pointer;
+	align-self: center;
+	transition: background-color 0.5s, color 0.5s, border 0.5s, width 0.5s;
+}
+
+.main__btn:hover {
+	background-color: transparent;
+	color: var(--White);
+	border: 2px solid var(--White);
+	width: 55%;
+}
+
+.socials ul {
+	display: flex;
+	justify-content: center;
+	gap: 1rem;
+}
+
+.social {
+	width: 50px;
+	height: 50px;
+
+	display: grid;
+	place-items: center;
+	border-radius: 50%;
+	border: 2px solid var(--White);
+	cursor: pointer;
+	font-size: 1.5rem;
+	color: var(--White);
+
+	transition: background-color 0.5s, color 0.5s;
+}
+
+.social:hover {
+	background-color: var(--White);
+	color: var(--Violet);
+}
+
+@media (min-width: 800px) {
+	.container {
+		background-image: url(./images/bg-desktop.svg);
+		background-size: cover;
+	}
+
+	.main {
+		grid-template-columns: 1fr 1fr;
+	}
+
+	.main__text {
+		padding-top: 3rem;
+		text-align: start;
+	}
+
+	.main__btn {
+		align-self: flex-start;
+	}
+
+	.socials ul {
+		justify-content: flex-end;
+	}
+}

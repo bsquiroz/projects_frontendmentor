@@ -1,0 +1,140 @@
+@import url("https://fonts.googleapis.com/css2?family=Karla:wght@400;700&display=swap");
+
+:root {
+	--Cyan: hsl(179, 62%, 43%);
+	--CyanLight: hsl(179, 62%, 60%);
+	--BrightYellow: hsl(71, 73%, 54%);
+	--LightGray: hsl(204, 43%, 93%);
+	--GrayishBlue: hsl(218, 22%, 67%);
+	--White: hsl(0, 0%, 100%);
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: "Karla", sans-serif;
+	line-height: 1.5rem;
+}
+
+ul {
+	list-style: none;
+}
+
+.container {
+	min-height: 100vh;
+	background-color: var(--LightGray);
+	padding: 1rem;
+
+	display: grid;
+	place-items: center;
+}
+
+.components {
+	max-width: 800px;
+	border-radius: 1rem;
+	overflow: hidden;
+	box-shadow: 0px 0px 1rem rgba(0, 0, 0, 0.2);
+}
+
+.component {
+	padding: 1.5rem;
+
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	gap: 1rem;
+}
+
+.component:nth-child(1) {
+	background-color: var(--White);
+}
+
+.component:nth-child(2) {
+	background-color: var(--Cyan);
+	color: var(--White);
+}
+
+.component:nth-child(3) {
+	background-color: var(--CyanLight);
+	color: var(--White);
+}
+
+.component:nth-child(1) h2 {
+	color: var(--Cyan);
+}
+
+.component:nth-child(1) h3 {
+	color: var(--BrightYellow);
+}
+
+.component:nth-child(1) p {
+	color: var(--GrayishBlue);
+}
+
+.component:nth-child(2) p:nth-child(2) {
+	font-size: 2rem;
+	font-weight: 600;
+
+	display: flex;
+	gap: 1rem;
+}
+
+.component:nth-child(2) p:nth-child(2) span {
+	color: var(--GrayishBlue);
+	font-weight: lighter;
+	font-size: 1rem;
+}
+
+.btn {
+	padding: 0.6rem;
+	color: inherit;
+	border: 2px solid transparent;
+	border-radius: 0.5rem;
+	background-color: var(--BrightYellow);
+	font-weight: bold;
+	font-size: 0.9rem;
+	cursor: pointer;
+	box-shadow: 0px 0px 1rem rgba(0, 0, 0, 0.1);
+	align-self: center;
+	width: 90%;
+	transition: border 0.5s, background-color 0.5s, color 0.5s, width 0.5s,
+		box-shadow 0.5s;
+}
+
+.btn:hover {
+	border: 2px solid var(--BrightYellow);
+	background-color: transparent;
+	color: var(--BrightYellow);
+	width: 100%;
+	box-shadow: 0px 0px 1rem rgba(0, 0, 0, 0.3);
+}
+
+.btn:active {
+	width: 90%;
+}
+
+.component:nth-child(3) ul {
+	color: var(--LightGray);
+}
+
+@media (min-width: 600px) {
+	.components {
+		display: grid;
+		grid-template-areas:
+			"item1 item1"
+			"item2 item3";
+	}
+
+	.component:nth-child(1) {
+		grid-area: item1;
+	}
+
+	.component:nth-child(2) {
+		grid-area: item2;
+	}
+
+	.component:nth-child(3) {
+		grid-area: item3;
+	}
+}
