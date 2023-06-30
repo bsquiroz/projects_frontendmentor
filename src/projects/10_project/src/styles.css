@@ -1,0 +1,139 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;600&display=swap");
+
+:root {
+	--Red: hsl(0, 78%, 62%);
+	--Cyan: hsl(180, 62%, 55%);
+	--Orange: hsl(34, 97%, 64%);
+	--Blue: hsl(212, 86%, 64%);
+	--VeryDarkBlue: hsl(234, 12%, 34%);
+	--GrayishBlue: hsl(229, 6%, 66%);
+	--VeryLightGray: hsl(0, 0%, 98%);
+	--White: hsl(0, 0%, 100%);
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: "Poppins", sans-serif;
+	line-height: 1.5rem;
+}
+
+.container {
+	min-height: 100vh;
+	padding: 1rem;
+	background-color: var(--VeryLightGray);
+
+	display: grid;
+	place-items: center;
+
+	user-select: none;
+}
+
+.section {
+	max-width: 1024px;
+	display: grid;
+	gap: 3rem;
+}
+
+.section__header {
+	display: flex;
+	flex-direction: column;
+	text-align: center;
+	gap: 1rem;
+}
+
+.section__header h2:nth-child(1) {
+	color: var(--GrayishBlue);
+	font-weight: 200;
+}
+
+.section__header h2:nth-child(2) {
+	color: var(--VeryDarkBlue);
+	font-weight: 600;
+}
+
+.section__header p {
+	color: var(--GrayishBlue);
+}
+
+.cards {
+	display: grid;
+	gap: 1rem;
+}
+
+.card {
+	background-color: var(--White);
+	padding: 1rem;
+	border-radius: 1rem;
+	display: flex;
+	flex-direction: column;
+	gap: 0.5rem;
+	box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+	position: relative;
+	overflow: hidden;
+}
+
+.card::before {
+	position: absolute;
+	content: "";
+	width: 100%;
+	top: 0;
+	left: 0;
+	height: 5px;
+}
+
+.card:nth-child(1)::before {
+	background-color: var(--Cyan);
+}
+
+.card:nth-child(2)::before {
+	background-color: var(--Red);
+}
+
+.card:nth-child(3)::before {
+	background-color: var(--Orange);
+}
+
+.card:nth-child(4)::before {
+	background-color: var(--Blue);
+}
+
+.card h3 {
+	color: var(--VeryDarkBlue);
+	font-weight: 600;
+}
+
+.card p {
+	color: var(--GrayishBlue);
+}
+
+.card__img {
+	align-self: flex-end;
+}
+
+@media (min-width: 600px) {
+	.cards {
+		grid-template-areas:
+			".     item2     ."
+			"item1 item2 item4"
+			"item1 item3 item4"
+			".     item3     .";
+	}
+
+	.card:nth-child(1) {
+		grid-area: item1;
+	}
+
+	.card:nth-child(2) {
+		grid-area: item2;
+	}
+
+	.card:nth-child(3) {
+		grid-area: item3;
+	}
+
+	.card:nth-child(4) {
+		grid-area: item4;
+	}
+}

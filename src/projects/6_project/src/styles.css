@@ -1,0 +1,144 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Lexend+Deca&display=swap");
+
+:root {
+	--Verydarkbluemain: hsl(233, 47%, 7%);
+	--Darkdesaturatedbluecard: hsl(244, 38%, 16%);
+	--Softviolet: hsl(277, 64%, 61%);
+	--Softviolet--overlay: hsla(277, 69%, 54%, 0.7);
+	--White: hsl(0, 0%, 100%);
+	--Slightlyparagraph: hsla(0, 0%, 100%, 0.75);
+	--Slightlyheadings: hsla(0, 0%, 100%, 0.6);
+}
+
+.ff {
+	font-family: "Inter", sans-serif;
+	font-family: "Lexend Deca", sans-serif;
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	line-height: 1.5rem;
+}
+
+img {
+	width: 100%;
+	display: block;
+}
+
+.img__desktop {
+	display: none;
+}
+
+.container {
+	padding: 1rem;
+	min-height: 100vh;
+	background-color: var(--Verydarkbluemain);
+	display: grid;
+	place-items: center;
+}
+
+.stats {
+	user-select: none;
+	max-width: 500px;
+	border-radius: 1rem;
+	overflow: hidden;
+	background-color: var(--Darkdesaturatedbluecard);
+}
+
+.stats__img {
+	position: relative;
+}
+
+.stats__img::before {
+	content: "";
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	background-color: var(--Softviolet--overlay);
+}
+
+/* .overlay_img {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	background-color: var(--Softviolet--overlay);
+} */
+
+.stats__info {
+	padding: 2rem;
+	display: grid;
+	gap: 1.4rem;
+	text-align: center;
+}
+
+.stats__info h2 {
+	color: var(--White);
+	font-size: 1.6rem;
+	font-family: "Inter", sans-serif;
+	line-height: 2rem;
+}
+
+.stats__info h2 span {
+	color: var(--Softviolet);
+}
+
+.stats__info p {
+	font-family: "Lexend Deca", sans-serif;
+	color: var(--Slightlyheadings);
+}
+
+.stats__info__items {
+	display: grid;
+	gap: 1rem;
+}
+
+.stats__info__items span {
+	font-weight: 700;
+	font-family: "Inter", sans-serif;
+	color: var(--White);
+	font-size: 1.5rem;
+}
+
+@media (min-width: 1100px) {
+	.img__mobile {
+		display: none;
+	}
+	.img__desktop {
+		display: block;
+	}
+
+	.stats {
+		max-width: 1100px;
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		grid-template-areas: "sec2 sec1";
+	}
+
+	.stats__img {
+		/* grid-column: 2 / 3;
+		grid-row: 1 / 2; */
+		grid-area: sec1;
+	}
+
+	.stats__info {
+		grid-area: sec2;
+		text-align: start;
+
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		/* grid-column: 1 / 2;
+		grid-row: 1 / 2; */
+	}
+
+	.stats__info h2 {
+		font-size: 2rem;
+	}
+
+	.stats__info__items {
+		margin-top: 2rem;
+		grid-template-columns: repeat(3, 1fr);
+	}
+}
