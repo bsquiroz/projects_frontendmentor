@@ -107,4 +107,13 @@ export const dataProjects = [
 		img: "./src/images/img12.png",
 		video: "https://youtu.be/JDSGwUoWxHA",
 	},
+	{
+		id: 13,
+		name: "huddle landing page and section-master",
+		link: "./src/projects/13_project",
+		tags: ["css", "html", "js"],
+		nivel: "Junior",
+		img: "./src/images/img13.png",
+		video: "https://youtu.be/tFI3RKZaR2o",
+	},
 ];
